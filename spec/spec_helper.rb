@@ -1,5 +1,5 @@
 require_relative '../variable.rb'
-greeting = "Hello World"
+
 RSpec.configure do |config|
   config.order = 'default'
 end
@@ -7,7 +7,7 @@ end
 def get_variable_from_file(file, variable)
   file_scope = binding
   file_scope.eval(File.read(file))
-
+greeting = "Hello World"
   begin
     return file_scope.local_variable_get(variable)
   rescue NameError
